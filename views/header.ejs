@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-r from-purple-500 to-pink-500 flex flex-col" onload="clock()">
+    <nav class="flex justify-center items-center w-100% shadow-md text-white bg-black">
+        <h1 class="text-3xl font-semibold"><a href="/">ToDo</a></h1>
+        <div class="ml-2 my-3 text-center align-midddle">
+            <button class="cursor-pointer border-2 border-white rounded-full w-8 h-8 font-bold" id="toggle-search">+</button>
+        </div>
+        <form id="searchBar" class="my-2 ml-2" action="/find" name="search" method="post">
+            <input class="bg-zinc-700 text-stone-500 rounded-full text-center px-2 py-1" type="text" id="searchinput" name="input" placeholder="Search or Create New">
+            <button class="bg-amber-500 rounded-lg px-2 py-1" type="submit">Search</button>
+        </form>
+    </nav>
+    
+    <div class="flex flex-col-reverse md:flex-row items-center my-4 md:mt-16" id="container">

@@ -1,0 +1,43 @@
+        <!-- Time and Date -->
+        <div class="bg-black/25 flex flex-col mx-auto my-2 md:my-0 justify-center text-white shadow-md hover:bg-black/50 rounded-lg" id="right">
+            
+            <div class="mx-auto text-xl md:text-6xl md:py-6" id="clock"></div>
+
+            <p class="flow-root mx-auto text-base md:text-3xl" id="day"><%= day %></p>
+            <p class="flow-root mx-auto text-base md:text-3xl px-4 pb-2" id="date"><%= date %></p>
+            <!-- put date month and year separately to make more responsive -->
+        </div>
+    </div>
+    <script>
+        function clock(){
+            let today = new Date();
+            let h = today.getHours();
+            let m = today.getMinutes();
+            if(m<10){
+                m="0"+m;
+            }
+            if(h>12){
+                h=h-12;
+            }
+            if(h==0){
+                h=12;
+            }
+            document.getElementById('clock').innerHTML= h+":"+m;
+        }
+        setInterval(clock,30000);
+
+        let x=document.getElementById('searchBar');
+        document.getElementById("toggle-search").addEventListener('click', function() {
+            if(x.style.display==="none"){
+                x.style.display="inline-block";
+                x.classList.add("toggled");
+            }
+            else{
+                x.style.display="none";
+                x.classList.remove("toggled");
+            }
+        });
+    </script>
+
+</body>
+</html>
